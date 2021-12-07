@@ -1,0 +1,21 @@
+@import '../../../commons/colors.scss';
+
+.v-bind {
+    flex-basis: 100%;
+
+    a {
+        padding: 5px 10px;
+        border: 2px solid $main-color;
+        margin-right: 20px;
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+}

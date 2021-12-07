@@ -1,0 +1,19 @@
+<div class="v-bind">
+    <div class="v-bind__links">
+        <a v-bind:href="url">v-bind:href link</a>
+
+        <!-- shortened syntax -->
+        <a :href="url">:href link</a>
+        <!--
+        Allows you to bind an expression to the value of a property of an HTML element or component. 
+        Since this is the most commonly used directive, we usually use the shortened syntax :property="value".
+        -->
+    </div>
+
+    <div class="v-bind__image">
+        I {{likesVue ? "love" : "hate"}} Vue
+        <img :src="logo" :width='logoWidth'/>
+    </div>
+</div>
+
+
