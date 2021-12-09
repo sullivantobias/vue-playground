@@ -1,0 +1,9 @@
+<div class="v-if-else">
+    <input type="range" min="0" max="40" v-model="temperature" />
+    {{ temperature }} °C
+    <span v-if="temperature > 30" >🥵</span>
+    <span v-else-if="temperature < 20">🥶</span>
+    <span v-else>😀</span>
+</div>
+
+

@@ -4,6 +4,9 @@
 import SingleFileComponent from './components/single-file-component.vue';
 import VBind from './components/directives/v-bind/v-bind.vue';
 import VModel from './components/directives/v-model/v-model.vue';
+import VIf from './components/directives/v-if/v-if.vue';
+import VFor from './components/directives/v-for/v-for.vue';
+import VOn from './components/directives/v-on/v-on.vue';
 </script>
 
 <template>
@@ -12,6 +15,12 @@ import VModel from './components/directives/v-model/v-model.vue';
     <VBind />
     <p>V-model Example</p>
     <VModel />
+    <p>V-if Example</p>
+    <VIf />
+     <p>V-For Example</p>
+    <VFor />
+    <p>V-On Example</p>
+    <VOn />
 </template>
 
 <style lang="scss">

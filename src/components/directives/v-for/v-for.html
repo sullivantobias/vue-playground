@@ -1,0 +1,12 @@
+<div class="v-loop">
+    <ul>
+        <div class="type" v-for="({ type, quantity }) in basket">
+           <li v-for="n in quantity" :key="n">
+               {{ type }}
+            </li>
+            ({{ quantity }})
+        </div>
+    </ul>
+</div>
+
+

@@ -1,0 +1,18 @@
+<!-- v-event:click -->
+<!-- shortened syntax: @event -->
+
+<div class="v-on">
+    <button @click='addMonkey'>Add monkey</button>
+
+    <div>
+        <span 
+            v-for="(monkey, index) in monkeys"
+            @mouseover="handleEyesMonkey(monkey, true)"
+            @mouseleave="handleEyesMonkey(monkey)"
+            @click="removeMonkey(index)"
+            class="monkey"
+        >
+            {{ monkey.hasEyesOpen ? '🙉' : '🙈' }}
+        </span>
+    </div>
+</div>

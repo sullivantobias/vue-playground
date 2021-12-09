@@ -1,0 +1,11 @@
+@import '../../../commons/colors.scss';
+
+.v-on { 
+    border: 2px solid $main-color;
+    padding: 10px;
+
+    .monkey {
+        font-size: 30px;
+        cursor: default;
+    }
+}
