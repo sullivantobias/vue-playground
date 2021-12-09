@@ -3,15 +3,19 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import SingleFileComponent from './components/single-file-component.vue';
 import VBind from './components/directives/v-bind/v-bind.vue';
+import VModel from './components/directives/v-model/v-model.vue';
 </script>
 
 <template>
     <SingleFileComponent />
     <p>V-bind Example</p>
-    <VBind/>
+    <VBind />
+    <p>V-model Example</p>
+    <VModel />
 </template>
 
 <style lang="scss">
+@import './commons/colors.scss';
 
 body, html {
     box-sizing: border-box;
@@ -20,11 +24,17 @@ body, html {
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #304455;
+    color: $body-color;
 
     p {
         font-weight: bold;
         font-size: 16px;
+        flex-basis: 100%;
+    }
+
+    span {
+        color: $main-color; 
+        font-weight: bold;
     }
 
     a {

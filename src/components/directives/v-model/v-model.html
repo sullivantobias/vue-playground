@@ -1,0 +1,24 @@
+<div class="v-model">
+    <label>
+        What is your name ?
+        <input v-model="name" placeholder="type something">
+
+        <p>
+            Hello <span>{{ name }}</span>
+        </p>
+    </label>
+
+    <label>
+        <input v-model="isChecked" type="checkbox">
+        The checkbox is <span>{{ isChecked }}</span>
+    </label>
+    <select v-model="selectValue">
+      <option value="100">Small</option>
+      <option value="150">Medium</option>
+      <option value="200">Giant</option>
+    </select>
+
+    <p>The select value is <span>{{ selectValue }}</span></p>
+</div>
+
+

@@ -1,0 +1,13 @@
+@import '../../../commons/colors.scss';
+
+.v-model {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid $main-color;
+    padding: 20px;
+
+    label {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
