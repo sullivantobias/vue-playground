@@ -32,19 +32,21 @@
 
 Example: [<span style='color: #42b983'>**Vue File**</span> ](/src/components/single-file-component.vue)
 
-<h1 style='color: #42b983'>v-bind: Bind properties</h1>
+# Directives
+
+<h2 style='color: #42b983'>v-bind: Bind properties</h2>
 
 Allows you to bind an expression to the value of a property of an HTML element or component. Since this is the most commonly used directive, we usually use the shortened syntax :property="value".
 
 Example: [<span style='color: #42b983'>**V-Bind Folder**</span> ](/src/components/directives/v-bind)
 
-<h1 style='color: #42b983'>v-model: Forms and inputs</h1>
+<h2 style='color: #42b983'>v-model: Forms and inputs</h2>
 
 Allows you to bind the value of a form field to a component data item. It is a two-way binding: the variable is updated when the contents of the field change (typically by the user) and vice versa.
 
 Example: [<span style='color: #42b983'>**V-Model Folder**</span> ](/src/components/directives/v-model)
 
-<h1 style='color: #42b983'>v-if: Conditions</h1>
+<h2 style='color: #42b983'>v-if: Conditions</h2>
 
 Allows you to insert or not an element according to a condition. If you want the element not to be removed from the DOM but just visually hidden in CSS, use v-show instead.
 
@@ -52,7 +54,7 @@ The v-else-if and v-else directives work in the same way as their JavaScript equ
 
 Example: [<span style='color: #42b983'>**V-If Folder**</span> ](/src/components/directives/v-if)
 
-<h1 style='color: #42b983'>v-for: Loops</h1>
+<h2 style='color: #42b983'>v-for: Loops</h2>
 
 Generates lists of elements by repeating a template by iteration on an iterable value: typically an Array, the list of properties of an object, or a fixed number of iterations.
 
@@ -60,7 +62,7 @@ The directive declares local variables representing each iterated element and th
 
 Example: [<span style='color: #42b983'>**V-For Folder**</span> ](/src/components/directives/v-for)
 
-<h1 style='color: #42b983'>v-on: Events</h1>
+<h2 style='color: #42b983'>v-on: Events</h2>
 
 Define an action to take when an event occurs. It can be a DOM event (click, mouseover, focus, etc.) or a custom event emitted by a child component.
 
@@ -85,3 +87,11 @@ Modifiers are suffixes used to slightly change the behavior of some directives: 
 <span style='color: #42b983'>**Also available: .tab, .delete, .esc, .space...**</span>
 
 `<input @keypress.enter="submit" />`
+
+# Components
+
+<h2 style='color: #42b983'>Methods</h2>
+
+The methods of the component are declared in the methods property. They can then be called from an expression in the template or from another method of the component with `this.myMethod()`
+
+Example: [<span style='color: #42b983'>**Methods Folder**</span> ](/src/components/components-example/methods)

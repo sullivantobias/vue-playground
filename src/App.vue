@@ -7,10 +7,41 @@ import VModel from './components/directives/v-model/v-model.vue';
 import VIf from './components/directives/v-if/v-if.vue';
 import VFor from './components/directives/v-for/v-for.vue';
 import VOn from './components/directives/v-on/v-on.vue';
+import Methods from './components/components-example/methods/methods.vue';
+</script>
+
+<script>
+export default {
+  name: "app",
+  data() {
+    return {
+      view: 'directives'
+    }
+  },
+  methods: {
+      handleView(view) {
+          this.view = view;
+      }
+  },
+};
 </script>
 
 <template>
-    <SingleFileComponent />
+<SingleFileComponent />
+<div class="views">
+    <button 
+        :class="{ selected: view === 'directives' }" 
+        @click="handleView('directives')">
+        Directives
+    </button>
+    <button 
+        :class="{ selected: view === 'components' }" 
+        @click="handleView('components')">
+        Components
+    </button>
+</div>
+
+<div v-if="view === 'directives'" class="directives">
     <p>V-bind Example</p>
     <VBind />
     <p>V-model Example</p>
@@ -21,6 +52,13 @@ import VOn from './components/directives/v-on/v-on.vue';
     <VFor />
     <p>V-On Example</p>
     <VOn />
+</div>
+
+<div v-else-if="view === 'components'" class="components">
+    <p>Methods Example</p>
+    <Methods/>
+</div>
+
 </template>
 
 <style lang="scss">
@@ -34,6 +72,30 @@ body, html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $body-color;
+
+    .section {
+        border: 2px solid $main-color;
+        padding: 20px;
+    }
+
+    .views {
+        display: flex;
+        flex-basis: 100%;
+    }
+
+    button {
+        padding: 10px;
+        border: none;
+        background-color: $main-color;
+        color: $white;
+        margin-right: 20px;
+        cursor: pointer;
+        opacity: 0.7;
+
+        &:hover, &.selected {
+            opacity: 1;   
+        }
+    }
 
     p {
         font-weight: bold;
