@@ -8,6 +8,8 @@ import VIf from './components/directives/v-if/v-if.vue';
 import VFor from './components/directives/v-for/v-for.vue';
 import VOn from './components/directives/v-on/v-on.vue';
 import Methods from './components/components-example/methods/methods.vue';
+import ComputedAndWatchers from './components/components-example/computedAndWatchers/computedAndWatchers.vue';
+import ParentToChild from './components/components-example/communication/parentToChild/parentToChild.vue';
 </script>
 
 <script>
@@ -15,7 +17,11 @@ export default {
   name: "app",
   data() {
     return {
-      view: 'directives'
+      view: 'directives',
+      article: {
+        title: "Dynamic title",
+        content: "Dynamic content",
+      },
     }
   },
   methods: {
@@ -57,6 +63,12 @@ export default {
 <div v-else-if="view === 'components'" class="components">
     <p>Methods Example</p>
     <Methods/>
+    <p>Computed and Watchers Example</p>
+    <ComputedAndWatchers/>
+    <p>Communication Parent to Child Example</p>
+    <ParentToChild method="Static Method" title="Static Title" content="Static Content" />
+    <ParentToChild method="Classic Dynamic Passing Props" :title="article.title" :content="article.content" />
+    <ParentToChild method="V-Bind Method - Shortand" v-bind="article" />
 </div>
 
 </template>

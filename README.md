@@ -6,6 +6,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-## Presentation
+## Directives
 
-- [Presention](presensation.md)
+- [Presention](directives.md)
+
+## Components
+
+- [Presention](components.md)

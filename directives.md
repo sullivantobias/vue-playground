@@ -88,10 +88,4 @@ Modifiers are suffixes used to slightly change the behavior of some directives: 
 
 `<input @keypress.enter="submit" />`
 
-# Components
-
-<h2 style='color: #42b983'>Methods</h2>
-
-The methods of the component are declared in the methods property. They can then be called from an expression in the template or from another method of the component with `this.myMethod()`
-
-Example: [<span style='color: #42b983'>**Methods Folder**</span> ](/src/components/components-example/methods)
+> [Next Step - Components](components.md)
