@@ -1,0 +1,12 @@
+@import '../../../../commons/colors.scss';
+
+.childToParent {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    textarea {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+}

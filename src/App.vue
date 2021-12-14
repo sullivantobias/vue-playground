@@ -10,6 +10,7 @@ import VOn from './components/directives/v-on/v-on.vue';
 import Methods from './components/components-example/methods/methods.vue';
 import ComputedAndWatchers from './components/components-example/computedAndWatchers/computedAndWatchers.vue';
 import ParentToChild from './components/components-example/communication/parentToChild/parentToChild.vue';
+import ChildToParent from './components/components-example/communication/childToParent/childToParent.vue';
 </script>
 
 <script>
@@ -22,12 +23,16 @@ export default {
         title: "Dynamic title",
         content: "Dynamic content",
       },
+    childToParentValue: "Default value",
     }
   },
   methods: {
-      handleView(view) {
-          this.view = view;
-      }
+    handleView(view) {
+        this.view = view;
+    },
+    handleChildToParentCommunication(value) {
+        this.childToParentValue = value;
+    },
   },
 };
 </script>
@@ -69,6 +74,11 @@ export default {
     <ParentToChild method="Static Method" title="Static Title" content="Static Content" />
     <ParentToChild method="Classic Dynamic Passing Props" :title="article.title" :content="article.content" />
     <ParentToChild method="V-Bind Method - Shortand" v-bind="article" />
+    <p>Communication Child to Parent Example</p>
+    <div class="section">
+        <ChildToParent @comment="handleChildToParentCommunication($event)" />
+        <span>{{ childToParentValue }}</span>
+    </div>
 </div>
 
 </template>

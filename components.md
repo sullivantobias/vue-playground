@@ -40,10 +40,22 @@ Typically, we use created as the equivalent of a constructor function, to initia
 
 <h2 style='color: #42b983'>Communication Between Components</h2>
 
-### **Parent to Child communication with props**
+### **Parent to Child Communication with props**
 
 Like any other HTML element, Vue components can receive arguments, called props or properties. Props are used to convey information from a parent component to a child component.
 
 You must declare the list of accepted properties in the props option of the component. Received props can be used in templates or methods just like properties declared in data. The difference is that we will avoid reassigning or mutating props: since these values come from the parent component, we must rather communicate with this parent (ascending communication) for it to make the change itself. The changed value will then be automatically reported to the child components.
 
 Example: [<span style='color: #42b983'>**Parent to child Folder**</span> ](/src/components/components-example/communication/parentToChild)
+
+### **Child to parent Communication with Events**
+
+Although a child component can technically access its parent component, it is a bad practice because it induces a tight coupling between the components: the component loses in genericity, it is more difficult to reuse and the risk of infinite loop is higher.
+
+Child components communicate with their parents by using **events**: they emit events that propagate from parent to parent, in the same way as DOM events like a mouse click. **A good component is agnostic of his environment**, it does not know his parents and does not know if the events it emets will ever be intercepted (or "listened to").
+
+To **emit** an event, use the `$emit` method available in all Vue components. It takes as parameter the name of the event, and optionally a value (payload) to transmit. If you need to pass multiple values, encapsulate them in an object. The list of the events sent by a component should be described in the `emits` component option, not mandatory but useful for documentation purposes.
+
+To **listen** to an event emitted by a child component, we use the same `v-on` directive as for DOM events, or `@yourEvent` shorthand. The value passed with the event can be retrieved via the `$event` variable in the directive value.
+
+Example: [<span style='color: #42b983'>**Child to parent Folder**</span> ](/src/components/components-example/communication/childToParent)
