@@ -11,6 +11,8 @@ import Methods from './components/components-example/methods/methods.vue';
 import ComputedAndWatchers from './components/components-example/computedAndWatchers/computedAndWatchers.vue';
 import ParentToChild from './components/components-example/communication/parentToChild/parentToChild.vue';
 import ChildToParent from './components/components-example/communication/childToParent/childToParent.vue';
+import SlotAndContent from './components/components-example/slotAndContent/slotAndContent.vue';
+import CompositionApi from './components/reusability/compositionApi/compositionApi.vue';
 </script>
 
 <script>
@@ -50,6 +52,11 @@ export default {
         @click="handleView('components')">
         Components
     </button>
+     <button 
+        :class="{ selected: view === 'reusability' }" 
+        @click="handleView('reusability')">
+        Reusability
+    </button>
 </div>
 
 <div v-if="view === 'directives'" class="directives">
@@ -79,6 +86,20 @@ export default {
         <ChildToParent @comment="handleChildToParentCommunication($event)" />
         <span>{{ childToParentValue }}</span>
     </div>
+    <p>Slot and Content Example</p>
+    <SlotAndContent>
+        <template v-slot:header>
+            <header>Header Slot</header>
+        </template>
+        
+        <span>Default slot</span>
+    </SlotAndContent>
+
+</div>
+
+<div v-else>
+    <p>Composition Api Example</p>
+    <CompositionApi/>
 </div>
 
 </template>

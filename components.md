@@ -59,3 +59,82 @@ To **emit** an event, use the `$emit` method available in all Vue components. It
 To **listen** to an event emitted by a child component, we use the same `v-on` directive as for DOM events, or `@yourEvent` shorthand. The value passed with the event can be retrieved via the `$event` variable in the directive value.
 
 Example: [<span style='color: #42b983'>**Child to parent Folder**</span> ](/src/components/components-example/communication/childToParent)
+
+### **Slots and Content Distribution**
+
+Since Vue components are declared as tags, we can pass them attributes, props, but also place other elements or content inside these tags
+
+The tag content is then placed in a container called the default slot.
+
+Slots can contain any HTML content, including other Vue components. They are very useful for declaring components that serve as a container rather than content, such as dialog windows or layout elements.
+
+In addition to the default slot, you can name certain slots to distribute content to multiple locations, by using the v-slot directive
+
+Example: [<span style='color: #42b983'>**Slot And content Folder**</span> ](/src/components/components-example/slotAndContent)
+
+### **Elements References**
+
+To retrieve a reference to an element or child component in a template, use the `ref` directive. Once the component is mounted on the DOM, the element will be accessible via `vm.$refs[yourReference]`.
+
+    <p ref="label">My paragraph</p>
+    <my-child-component ref="child"></my-child-component>
+
+    vm.$refs.label; // reference to paragraph element
+    vm.$refs.child; // reference to MyChildComponent instance
+
+<h2 style='color: #42b983'>Complete API of Vue Components</h2>
+
+    export default {
+        name: "MyComponent", // useful for debugging purposes
+        components: {}, // declared child components
+        mixins: [], // share common features between components
+        extends: {}, // create components based on other ones
+        props: {}, // properties passed from parent
+        data() {}, // component internal state variables
+        computed: {}, // computed properties
+        watch: {}, // observed properties
+        methods: {}, // component own methods
+        // component lifecycle hooks
+        beforeCreate() {},
+        created() {},
+        beforeMount() {},
+        mounted() {},
+        beforeUpdate() {},
+        updated() {},
+        activated() {},
+        deactivated() {},
+        beforeDestroy() {}, // beforeUnmount with Vue 3
+        destroyed() {}, // unmounted with Vue 3
+        errorCaptured() {}
+    };
+
+### **Vue instance properties**
+
+> vm is often used as a convention to refer to a Vue component instance
+
+- `vm.$data`
+- `vm.$props`
+- `vm.$slots`
+- `vm.$refs`
+- `vm.$listeners`
+- `vm.$options`: all the component options
+- `vm.$el`: reference to the root HTML element on which the component is mounted
+- `vm.$parent`: reference to parent component
+- `vm.$root`: reference to root component
+- `vm.$children`: array of child components
+
+### **Vue instance methods**
+
+- `vm.$watch`: declare programmatically a watcher
+- `vm.$set`: assign a property while ensuring reactivity
+- `vm.$delete`: unassign a property while ensuring reactivity
+- `vm.$on`: declare programmatically an event listener
+- `vm.$once`: declare a listener with modifier once
+- `vm.$off`: removes an event listener
+- `vm.$emit`: emets an event
+- `vm.$mount`: bind the component to a DOM element
+- `vm.$destroy`: destroys the component instance
+- `vm.$forceUpdate`: force complete update of the component (not recommended)
+- `vm.$nextTick`: report a function call to next tick in the event loop
+
+#

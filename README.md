@@ -13,3 +13,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## Components
 
 - [Presention](components.md)
+
+## Reusability and composition
+
+- [Presention](reusability.md)
