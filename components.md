@@ -4,7 +4,7 @@
 
 The methods of the component are declared in the methods property. They can then be called from an expression in the template or from another method of the component with `this.myMethod()`
 
-Example: [<span style='color: #42b983'>**Methods Folder**</span> ](/src/components/components-example/methods)
+Example: [<span style='color: #42b983'>**Methods Folder**</span> ](src/components/components-example/methods)
 
 <h2 style='color: #42b983'>Computed and Watchers</h2>
 
@@ -16,7 +16,7 @@ Vue also lets you declare observers that run some specific code when a property 
 
 To distinguish the use cases of computed vs watcher, we will privilege most often the computed properties whenever possible. A watcher is more appropriate when what interests you in a mutation is not so much the new value, but the moment it occurs; to perform server requests or external actions for example.
 
-Example: [<span style='color: #42b983'>**Computed & Watchers Folder**</span> ](/src/components/components-example/computedAndWatchers)
+Example: [<span style='color: #42b983'>**Computed & Watchers Folder**</span> ](src/components/components-example/computedAndWatchers)
 
 <h2 style='color: #42b983'>Component Lifecycle</h2>
 
@@ -46,7 +46,7 @@ Like any other HTML element, Vue components can receive arguments, called props 
 
 You must declare the list of accepted properties in the props option of the component. Received props can be used in templates or methods just like properties declared in data. The difference is that we will avoid reassigning or mutating props: since these values come from the parent component, we must rather communicate with this parent (ascending communication) for it to make the change itself. The changed value will then be automatically reported to the child components.
 
-Example: [<span style='color: #42b983'>**Parent to child Folder**</span> ](/src/components/components-example/communication/parentToChild)
+Example: [<span style='color: #42b983'>**Parent to child Folder**</span> ](src/components/components-example/communication/parentToChild)
 
 ### **Child to parent Communication with Events**
 
@@ -58,7 +58,7 @@ To **emit** an event, use the `$emit` method available in all Vue components. It
 
 To **listen** to an event emitted by a child component, we use the same `v-on` directive as for DOM events, or `@yourEvent` shorthand. The value passed with the event can be retrieved via the `$event` variable in the directive value.
 
-Example: [<span style='color: #42b983'>**Child to parent Folder**</span> ](/src/components/components-example/communication/childToParent)
+Example: [<span style='color: #42b983'>**Child to parent Folder**</span> ](src/components/components-example/communication/childToParent)
 
 ### **Slots and Content Distribution**
 
@@ -70,7 +70,7 @@ Slots can contain any HTML content, including other Vue components. They are ver
 
 In addition to the default slot, you can name certain slots to distribute content to multiple locations, by using the v-slot directive
 
-Example: [<span style='color: #42b983'>**Slot And content Folder**</span> ](/src/components/components-example/slotAndContent)
+Example: [<span style='color: #42b983'>**Slot And content Folder**</span> ](src/components/components-example/slotAndContent)
 
 ### **Elements References**
 

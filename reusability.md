@@ -14,7 +14,7 @@ To overcome this, Vue 3 offers an alternative API for declaring components: the 
 - `ref` is used to encapsulate primitive values such as string newTodo in a `{ value }` object structure so that you can change their value without changing their reference (mutation rather than reassignment) ; otherwise Vue would lose track of this variable (see Reactivity section).
 - `data` stored as object properties or array elements do not have this reassignment problem, so you can declare them with `reactive`
 
-Example: [<span style='color: #42b983'>**Composition API Folder**</span> ](/src/components/reusability/compositionApi)
+Example: [<span style='color: #42b983'>**Composition API Folder**</span> ](src/components/reusability/compositionApi)
 
 <h2 style='color: #42b983'>Custom directives</h2>
 
